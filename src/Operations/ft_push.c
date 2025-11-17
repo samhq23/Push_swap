@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
+/*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:43:07 by shoque            #+#    #+#             */
-/*   Updated: 2025/11/12 19:10:59 by shoque           ###   ########.fr       */
+/*   Updated: 2025/11/16 22:03:08 by farhan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,16 @@ static void	ft_push(t_stack_node **s, t_stack_node **d)
 	}
 }
 
-void	push_a(t_stack_node **stack_a, t_stack_node **stack_b)
+void	pa(t_stack_node **stack_b, t_stack_node **stack_a)
 {
-	ft_push(stack_a, stack_b);
+	ft_push(stack_b, stack_a);
 	ft_printf("pa\n");
 }
 
-void	push_b(t_stack_node **stack_a, t_stack_node **stack_b)
+void	pb(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	ft_push(stack_b, stack_a);
+	ft_push(stack_a, stack_b);
 	ft_printf("pb\n");
 }
+
+

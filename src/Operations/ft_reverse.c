@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_reverse.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
+/*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:28:09 by shoque            #+#    #+#             */
-/*   Updated: 2025/11/12 19:36:28 by shoque           ###   ########.fr       */
+/*   Updated: 2025/11/16 21:45:08 by farhan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 static void	ft_rotate(t_stack_node **s)
 {
 	t_stack_node	*start_node;
+	t_stack_node	*end_node;
 
 	if ((!*s) || (*s)->next == NULL)
 		return ;
 	start_node = *s;
 	end_node = ft_find_end(*s);
 	*s = start_node->next;
-	*s->prev = NULL;
+	(*s)->prev = NULL;
 	start_node->next = NULL;
 	start_node->prev = end_node;
 	end_node->next = start_node;

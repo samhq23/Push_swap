@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rev_rotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
+/*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:14:03 by shoque            #+#    #+#             */
-/*   Updated: 2025/11/12 19:31:13 by shoque           ###   ########.fr       */
+/*   Updated: 2025/11/15 04:26:44 by farhan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_rev_rotate(t_stack_node **s)
 	if ((!*s) || (*s)->next == NULL)
 		return ;
 	end_node = ft_find_end(*s);
-	end_node->prev->prev = NULL;
+	end_node->prev->next = NULL;
 	end_node ->next = *s;
 	end_node->prev = NULL;
 	*s = end_node;
