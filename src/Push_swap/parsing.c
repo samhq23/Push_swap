@@ -6,13 +6,13 @@
 /*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 06:49:26 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/18 13:33:20 by shoque           ###   ########.fr       */
+/*   Updated: 2025/11/18 17:06:52 by shoque           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static long	ft_atol(const char *str)
+static long	ft_atoi(const char *str)
 {
 	long	result;
 	int		sign;
@@ -60,22 +60,50 @@ static void	ft_append_node(t_stack_node **stack, int value)
 	}
 }
 
-void	ft_parsing(t_stack_node **a, int argc, char **argv)
+static void	free_split(char **arr)
 {
-	long	value;
-	int		i;
+	int	i;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	if (!arr)
+		return ;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
+}
+
+static void	ft_parse_arg(t_stack_node **a, char *arg)
+{
+	char	**nums;
+	long	value;
+	int		j;
+
+	nums = ft_split(arg);
+	if (!nums)
+		free_error(a);
+	j = -1;
+	while (nums[++j])
 	{
-		if (error_syntax(argv[i]))
+		if (error_syntax(nums[j]))
 			free_error(a);
-		value = ft_atol(argv[i]);
+		value = ft_atoi(nums[j]);
 		if (value > INT_MAX || value < INT_MIN)
 			free_error(a);
 		if (error_duplicate(*a, (int)value))
 			free_error(a);
 		ft_append_node(a, (int)value);
+	}
+	free_split(nums);
+}
+
+void	ft_parsing(t_stack_node **a, int argc, char **argv)
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		ft_parse_arg(a, argv[i]);
 		i++;
 	}
 }

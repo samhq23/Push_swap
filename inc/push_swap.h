@@ -6,7 +6,7 @@
 /*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 05:34:56 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/18 13:35:31 by shoque           ###   ########.fr       */
+/*   Updated: 2025/11/18 17:05:45 by shoque           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ int				ft_is_sorted(t_stack_node *s);
 t_stack_node	*ft_find_end(t_stack_node **s);
 t_stack_node	*ft_find_min(t_stack_node *s);
 t_stack_node	*ft_find_max(t_stack_node *s);
+char			**ft_split(char const *s);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
 
 // Node initialization and preparation
 void			init_nodes_a(t_stack_node *a, t_stack_node *b);

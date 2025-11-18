@@ -6,7 +6,7 @@
 #    By: shoque <shoque@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/18 06:59:13 by farhan            #+#    #+#              #
-#    Updated: 2025/11/18 13:37:10 by shoque           ###   ########.fr        #
+#    Updated: 2025/11/18 16:42:46 by shoque           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,8 @@ SRCS = 	$(SRC_DIR)/Operations/ft_push.c \
 		$(SRC_DIR)/Push_swap/init_nodes_a.c \
 		$(SRC_DIR)/Push_swap/init_nodes_b.c \
 		$(SRC_DIR)/Push_swap/main.c \
+		$(SRC_DIR)/Push_swap/ft_split.c \
+		$(SRC_DIR)/Push_swap/ft_split_utils.c \
 		$(SRC_DIR)/Push_swap/parsing.c
 
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
