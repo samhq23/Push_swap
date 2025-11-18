@@ -6,11 +6,11 @@
 /*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 18:33:00 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/16 18:33:18 by farhan           ###   ########.fr       */
+/*   Updated: 2025/11/18 07:07:23 by farhan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "push_swap.h"
 
 t_stack_node    *ft_find_max(t_stack_node *s)
 {

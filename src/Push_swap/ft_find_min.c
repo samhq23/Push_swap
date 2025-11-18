@@ -6,11 +6,11 @@
 /*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 18:28:37 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/16 18:29:17 by farhan           ###   ########.fr       */
+/*   Updated: 2025/11/18 07:07:28 by farhan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "push_swap.h"
 
 t_stack_node    *ft_find_min(t_stack_node *s)
 {

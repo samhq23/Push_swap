@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_len.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 18:23:59 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/18 07:07:56 by farhan           ###   ########.fr       */
+/*   Created: 2025/08/20 21:35:41 by shoque            #+#    #+#             */
+/*   Updated: 2025/08/23 01:33:50 by shoque           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int    ft_stack_len(t_stack_node *s)
+int	ft_putstr(char *str)
 {
-    int    size;
+	int	i;
 
-    size = 0;
-    if (!s)
-        return (0);
-    while (s)
-    {
-        s = s->next;
-        size++;
-    }
-    return (size);
+	i = 0;
+	if (!str)
+	{
+		if (write(1, "(null)", 6) == -1)
+			return (-1);
+		return (6);
+	}
+	while (str[i])
+	{
+		if (write(1, &str[i], 1) == -1)
+			return (-1);
+		i++;
+	}
+	return (i);
 }

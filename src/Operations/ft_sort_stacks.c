@@ -6,23 +6,19 @@
 /*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0004/01/01 00:00:00 by >                 #+#    #+#             */
-/*   Updated: 2025/11/16 22:05:45 by farhan           ###   ########.fr       */
+/*   Updated: 2025/11/18 07:06:48 by farhan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "push_swap.h"
 
 static void	rotate_both(t_stack_node **a, t_stack_node **b,
 			t_stack_node *cheapest)
 {
 	while (*a != cheapest && *b != cheapest->target_node)
-	{
-		ra(a);
-        rb(b);
-		ft_printf("rr\n");
-	}
+		rr(a, b);
 	ft_current_index(*a);
 	ft_current_index(*b);
 }
@@ -31,11 +27,7 @@ static void	rev_rotate_both(t_stack_node **a, t_stack_node **b,
 			t_stack_node *cheapest)
 {
 	while (*a != cheapest && *b != cheapest->target_node)
-	{
-		ra(a);
-		rb(b);
-		ft_printf("rrr\n");
-	}
+		rrr(a, b);
 	ft_current_index(*a);
 	ft_current_index(*b);
 }
@@ -60,8 +52,10 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 
 static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 {
+	if (!*b)
+		return ;
 	ft_prep_for_push(a, (*b)->target_node, 'a');
-	pa(a, b);
+	pa(b, a);
 }
 
 static void	min_to_top(t_stack_node **a)
@@ -70,17 +64,16 @@ static void	min_to_top(t_stack_node **a)
 
 	min = ft_find_min(*a);
 	ft_current_index(*a);
-	ft_set_median_info(*a);
 	while (*a != min)
 	{
 		if (min->above_median)
-			ft_rotate(a);
+			ra(a);
 		else
-			ft_rev_rotate(a);
+			rra(a);
 	}
 }
 
-void	sort_stacks(t_stack_node **a, t_stack_node **b)
+void	ft_sort_stacks(t_stack_node **a, t_stack_node **b)
 {
 	int	len;
 

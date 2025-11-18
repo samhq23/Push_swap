@@ -6,11 +6,11 @@
 /*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 18:24:52 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/16 18:26:13 by farhan           ###   ########.fr       */
+/*   Updated: 2025/11/18 07:07:44 by farhan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "push_swap.h"
 
 int    ft_is_sorted(t_stack_node *s)
 {

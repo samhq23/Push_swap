@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_len.c                                     :+:      :+:    :+:   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 18:23:59 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/18 07:07:56 by farhan           ###   ########.fr       */
+/*   Created: 2025/08/20 21:35:46 by shoque            #+#    #+#             */
+/*   Updated: 2025/08/23 14:22:40 by shoque           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int    ft_stack_len(t_stack_node *s)
+int	ft_putunsigned(unsigned int nb)
 {
-    int    size;
+	int	count;
 
-    size = 0;
-    if (!s)
-        return (0);
-    while (s)
-    {
-        s = s->next;
-        size++;
-    }
-    return (size);
+	count = 0;
+	if (nb >= 10)
+	{
+		count += ft_putunsigned(nb / 10);
+		if (count == -1)
+			return (-1);
+	}
+	count += ft_putchar((nb % 10) + '0');
+	return (count);
 }

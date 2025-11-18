@@ -6,11 +6,11 @@
 /*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 19:06:32 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/16 19:41:40 by farhan           ###   ########.fr       */
+/*   Updated: 2025/11/18 07:07:47 by farhan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/push_swap.h"
+#include "push_swap.h"
 
 void    ft_prep_for_push(t_stack_node **s, t_stack_node *node, char stack_name)
 {

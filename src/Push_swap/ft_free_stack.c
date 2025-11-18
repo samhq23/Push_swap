@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_cheapest_node.c                            :+:      :+:    :+:   */
+/*   ft_free_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 18:47:03 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/18 07:07:14 by farhan           ###   ########.fr       */
+/*   Created: 2025/11/18 05:43:44 by farhan            #+#    #+#             */
+/*   Updated: 2025/11/18 07:11:03 by farhan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node    *ft_find_cheapest_node(t_stack_node *s)
+void    ft_free_stack(t_stack_node **stack)
 {
-    t_stack_node    *cheapest;
-    long int        lower_cost;
+    t_stack_node    *current;
+    t_stack_node    *next_node;
 
-    if (!s)
-        return (NULL);
-    cheapest = s;
-    lower_cost = LONG_MAX;
-    while (s)
+    if (!stack || !*stack)
+        return ;
+    current = *stack;
+    while (current)
     {
-        if (s->total_cost < lower_cost)
-        {
-            lower_cost = s->total_cost;
-            cheapest = s;
-        }
-        s = s->next;
+        next_node = current->next;
+        current->value = 0;
+        free(current);
+        current = next_node;
     }
-    return (cheapest);
+    *stack = NULL;
+}
+
+void    free_error(t_stack_node **a)
+{
+    ft_free_stack(a);
+    ft_printf("Error\n");
+    exit(1);
 }

@@ -1,46 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_rotate.c                                    :+:      :+:    :+:   */
+/*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 19:14:03 by shoque            #+#    #+#             */
-/*   Updated: 2025/11/18 07:06:37 by farhan           ###   ########.fr       */
+/*   Created: 2025/11/12 19:28:09 by shoque            #+#    #+#             */
+/*   Updated: 2025/11/18 07:06:41 by farhan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_rev_rotate(t_stack_node **s)
+static void	ft_rotate(t_stack_node **s)
 {
+	t_stack_node	*start_node;
 	t_stack_node	*end_node;
 
 	if ((!*s) || (*s)->next == NULL)
 		return ;
+	start_node = *s;
 	end_node = ft_find_end(s);
-	end_node->prev->next = NULL;
-	end_node->next = *s;
-	end_node->prev = NULL;
-	*s = end_node;
-	end_node->next->prev = end_node;
+	*s = start_node->next;
+	(*s)->prev = NULL;
+	start_node->next = NULL;
+	start_node->prev = end_node;
+	end_node->next = start_node;
 }
 
-void	rra(t_stack_node **a)
+void	ra(t_stack_node **a)
 {
-	ft_rev_rotate(a);
-	ft_printf("rra\n");
+	ft_rotate(a);
+	ft_printf("ra\n");
 }
 
-void	rrb(t_stack_node **b)
+void	rb(t_stack_node **b)
 {
-	ft_rev_rotate(b);
-	ft_printf("rrb\n");
+	ft_rotate(b);
+	ft_printf("rb\n");
 }
 
-void	rrr(t_stack_node **a, t_stack_node **b)
+void	rr(t_stack_node **a, t_stack_node **b)
 {
-	ft_rev_rotate(a);
-	ft_rev_rotate(b);
-	ft_printf("rrr\n");
+	ft_rotate(a);
+	ft_rotate(b);
+	ft_printf("rr\n");
 }

@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_cheapest_node.c                            :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 18:47:03 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/18 07:07:14 by farhan           ###   ########.fr       */
+/*   Created: 2025/11/18 06:40:53 by farhan            #+#    #+#             */
+/*   Updated: 2025/11/18 07:07:00 by farhan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node    *ft_find_cheapest_node(t_stack_node *s)
+int    ft_abs(int n)
 {
-    t_stack_node    *cheapest;
-    long int        lower_cost;
-
-    if (!s)
-        return (NULL);
-    cheapest = s;
-    lower_cost = LONG_MAX;
-    while (s)
-    {
-        if (s->total_cost < lower_cost)
-        {
-            lower_cost = s->total_cost;
-            cheapest = s;
-        }
-        s = s->next;
-    }
-    return (cheapest);
+    if (n < 0)
+        return (-n);
+    return (n);
 }
