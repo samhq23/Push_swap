@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 06:40:53 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/18 07:07:00 by farhan           ###   ########.fr       */
+/*   Updated: 2025/11/18 13:31:53 by shoque           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../inc/push_swap.h"
 
-int    ft_abs(int n)
+int	ft_abs(int n)
 {
-    if (n < 0)
-        return (-n);
-    return (n);
+	if (n < 0)
+		return (-n);
+	return (n);
 }

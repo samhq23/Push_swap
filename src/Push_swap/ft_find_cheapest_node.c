@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_cheapest_node.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 18:47:03 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/18 07:07:14 by farhan           ###   ########.fr       */
+/*   Updated: 2025/11/18 13:32:07 by shoque           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../inc/push_swap.h"
 
-t_stack_node    *ft_find_cheapest_node(t_stack_node *s)
+t_stack_node	*ft_find_cheapest_node(t_stack_node *s)
 {
-    t_stack_node    *cheapest;
-    long int        lower_cost;
+	t_stack_node	*cheapest;
+	long int		lower_cost;
 
-    if (!s)
-        return (NULL);
-    cheapest = s;
-    lower_cost = LONG_MAX;
-    while (s)
-    {
-        if (s->total_cost < lower_cost)
-        {
-            lower_cost = s->total_cost;
-            cheapest = s;
-        }
-        s = s->next;
-    }
-    return (cheapest);
+	if (!s)
+		return (NULL);
+	cheapest = s;
+	lower_cost = LONG_MAX;
+	while (s)
+	{
+		if (s->total_cost < lower_cost)
+		{
+			lower_cost = s->total_cost;
+			cheapest = s;
+		}
+		s = s->next;
+	}
+	return (cheapest);
 }

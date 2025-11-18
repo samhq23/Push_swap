@@ -3,50 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 17:16:33 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/18 07:06:56 by farhan           ###   ########.fr       */
+/*   Updated: 2025/11/18 13:31:48 by shoque           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../inc/push_swap.h"
 
-static void    ft_swap(t_stack_node **s)
+static void	ft_swap(t_stack_node **s)
 {
-    t_stack_node	*first;
-    t_stack_node	*second;
-    t_stack_node    *third;
+	t_stack_node	*first;
+	t_stack_node	*second;
+	t_stack_node	*third;
 
-    if (!*s || (*s)->next == NULL)
-        return ;
-    first = *s;
-    second = first->next;
-    third = second->next;
-    *s = second;
-    (*s)->prev = NULL;
-    (*s)->next = first;
-    first->prev = *s;
-    first->next = third;
-    if (third)
-        third->prev = first;
+	if (!*s || (*s)->next == NULL)
+		return ;
+	first = *s;
+	second = first->next;
+	third = second->next;
+	*s = second;
+	(*s)->prev = NULL;
+	(*s)->next = first;
+	first->prev = *s;
+	first->next = third;
+	if (third)
+		third->prev = first;
 }
 
-void    sa(t_stack_node **a)
+void	sa(t_stack_node **a)
 {
-    ft_swap(a);
-    ft_printf("sa\n");
+	ft_swap(a);
+	ft_printf("sa\n");
 }
 
-void    sb(t_stack_node **b)
+void	sb(t_stack_node **b)
 {
-    ft_swap(b);
-    ft_printf("sb\n");
+	ft_swap(b);
+	ft_printf("sb\n");
 }
 
-void    ss(t_stack_node **a, t_stack_node **b)
+void	ss(t_stack_node **a, t_stack_node **b)
 {
-    ft_swap(a);
-    ft_swap(b);
-    ft_printf("ss\n");
+	ft_swap(a);
+	ft_swap(b);
+	ft_printf("ss\n");
 }

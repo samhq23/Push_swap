@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:28:09 by shoque            #+#    #+#             */
-/*   Updated: 2025/11/18 07:06:41 by farhan           ###   ########.fr       */
+/*   Updated: 2025/11/18 13:31:18 by shoque           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../inc/push_swap.h"
 
 static void	ft_rotate(t_stack_node **s)
 {

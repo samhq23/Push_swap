@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:43:07 by shoque            #+#    #+#             */
-/*   Updated: 2025/11/18 07:06:32 by farhan           ###   ########.fr       */
+/*   Updated: 2025/11/18 13:31:09 by shoque           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../inc/push_swap.h"
 
 static void	ft_push(t_stack_node **s, t_stack_node **d)
 {
@@ -47,5 +47,3 @@ void	pb(t_stack_node **stack_a, t_stack_node **stack_b)
 	ft_push(stack_a, stack_b);
 	ft_printf("pb\n");
 }
-
-

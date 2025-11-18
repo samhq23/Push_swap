@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: farhan <farhan@student.42.fr>              +#+  +:+       +#+         #
+#    By: shoque <shoque@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/18 06:59:13 by farhan            #+#    #+#              #
-#    Updated: 2025/11/18 07:04:32 by farhan           ###   ########.fr        #
+#    Updated: 2025/11/18 13:37:10 by shoque           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS = 	$(SRC_DIR)/Operations/ft_push.c \
 		$(SRC_DIR)/Operations/ft_rotate.c \
 		$(SRC_DIR)/Operations/ft_rev_rotate.c \
 		$(SRC_DIR)/Operations/ft_sort_stacks.c \
+		$(SRC_DIR)/Operations/ft_sort_utils.c \
 		$(SRC_DIR)/Operations/ft_sort_three.c \
 		$(SRC_DIR)/Push_swap/ft_abs.c \
 		$(SRC_DIR)/Push_swap/ft_current_index.c \

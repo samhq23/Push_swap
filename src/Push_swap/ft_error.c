@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 05:36:12 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/18 07:07:09 by farhan           ###   ########.fr       */
+/*   Updated: 2025/11/18 13:32:02 by shoque           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../inc/push_swap.h"
 
 int	error_syntax(char *str)
 {
@@ -32,16 +32,15 @@ int	error_syntax(char *str)
 	return (0);
 }
 
-
-int    error_duplicate(t_stack_node *a, int value)
+int	error_duplicate(t_stack_node *a, int value)
 {
-    if (!a)
-        return (0);
-    while (a)
-    {
-        if (a->value == value)
-            return (1);
-        a = a->next;
-    }
-    return (0);
+	if (!a)
+		return (0);
+	while (a)
+	{
+		if (a->value == value)
+			return (1);
+		a = a->next;
+	}
+	return (0);
 }

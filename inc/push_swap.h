@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: farhan <farhan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: shoque <shoque@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 05:34:56 by farhan            #+#    #+#             */
-/*   Updated: 2025/11/18 07:12:29 by farhan           ###   ########.fr       */
+/*   Updated: 2025/11/18 13:35:31 by shoque           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,20 @@ void			ft_sort_stacks(t_stack_node **a, t_stack_node **b);
 void			ft_sort_three(t_stack_node **a);
 
 /* ************************************************************************** */
+/*                           SORTING FUNCTIONS                                */
+/* ************************************************************************** */
+
+void			ft_sort_stacks(t_stack_node **a, t_stack_node **b);
+void			ft_sort_three(t_stack_node **a);
+void			move_a_to_b(t_stack_node **a, t_stack_node **b);
+void			move_b_to_a(t_stack_node **a, t_stack_node **b);
+void			min_to_top(t_stack_node **a);
+void			rotate_both(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheapest);
+void			rev_rotate_both(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheapest);
+
+/* ************************************************************************** */
 /*                           HELPER FUNCTIONS                                 */
 /* ************************************************************************** */
 
@@ -109,7 +123,6 @@ void			free_error(t_stack_node **a);
 /*                          EXTERNAL FUNCTIONS                                */
 /* ************************************************************************** */
 
-// If you're using ft_printf from your libft
 int				ft_printf(const char *format, ...);
 
 #endif
